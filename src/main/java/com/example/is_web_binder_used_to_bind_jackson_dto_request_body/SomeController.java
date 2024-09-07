@@ -19,6 +19,7 @@ import static com.example.is_web_binder_used_to_bind_jackson_dto_request_body.Is
 
 @Slf4j
 @RestController()
+@Validated
 @RequestMapping(SomeController.CONTROLLER_PATH)
 @AllArgsConstructor
 public class SomeController {
@@ -32,6 +33,14 @@ public class SomeController {
         return "OK";
     }
 
+
+//       vvvvv solution per each controller if needed. vvvvv
+//    @InitBinder
+//    public void initUserBinder(WebDataBinder binder) {
+//        // customization specific to binding a User
+//        binder.setExcludedValidators(e->true);
+//    }
+//       ^^^^^ solution per each controller if needed. ^^^^^
 
     @NoArgsConstructor
     @AllArgsConstructor
